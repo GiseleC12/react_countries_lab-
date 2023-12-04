@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import CountryButton from "../Components/CountriesList";
-import CountryList from "../Components/CountriesList";
+import CountryButton from "../Components/CountryButton";
+import CountryList from "../Components/CountryList";
+
 const CountriesContainer = ()  => {
     const [countries, setCountries] = useState(null);
     const [visitedCountries, setVisitedCountries] = useState(null);
@@ -19,7 +20,8 @@ const CountriesContainer = ()  => {
     return(
         <>
         <h1>Countries</h1>
-        <CountryButton onButtonClick={loadDogData}/>
+        <CountryButton onButtonClick={loadCountriesData} />
+        <CountryList countries={countries} />
         </>
     )
 }
