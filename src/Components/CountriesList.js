@@ -1,7 +1,17 @@
-const CountriesList = ({onButton}) => {
-    return (
-        <button onClick={onButtonCick}>Ticked</button>
-    )
-}
+import React from "react";
+import Country from "./Country";
 
-export default CountryButton;
+const CountriesList = ({ countries, markAsVisited }) => {
+    return (
+        <>
+            <h2>List of Countries</h2>
+            <ul>
+                {countries.map((country) => (
+                    <Country key={country.alpha3Code} country={country} markAsVisited={markAsVisited} />
+                ))}
+            </ul>
+        </>
+    );
+};
+
+export default CountriesList;
